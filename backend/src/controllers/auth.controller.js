@@ -1,7 +1,8 @@
-const generateToken = require("../lib/utils");
-const User = require("../models/user.model");
-const bcrypt=require('bcryptjs')
-const cloudinary=require('../lib/cloudinary')
+
+import generateToken from "../lib/utils.js";
+import User from "../models/user.model.js";
+import bcrypt from 'bcryptjs'
+import cloudinary from '../lib/cloudinary.js'
 
  
 const signup=async function(req,res){ 
@@ -105,4 +106,5 @@ const checkAuth=(req,res)=>{
         res.status(500).json({message:"internal server Error"});
     }
 }
-module.exports={signup,login,logout,updateProfile,checkAuth}
+export {signup,login,logout,updateProfile,checkAuth}
+
